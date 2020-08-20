@@ -1,6 +1,6 @@
-from globals import *
+from utils.globals import *
 from model import Vgg19NST
-from utils import (initialize_image, get_optimizer)
+from utils.utils import initialize_image, get_optimizer
 
 from torch.optim import Adam, LBFGS
 

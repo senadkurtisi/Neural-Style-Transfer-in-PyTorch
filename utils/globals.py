@@ -11,9 +11,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 parser = ArgumentParser()
 # Image loading parameters
 parser.add_argument("--content_loc", type=str,
-                    default='images/content/tree.jpg', help='location of the content image')
+                    default='images/content/green_bridge.jpg', help='location of the content image')
 parser.add_argument("--style_loc", type=str,
-                    default='images/style/scream.jpg', help='location of the style image')
+                    default='images/style/vg_la_cafe.jpg', help='location of the style image')
 parser.add_argument("--img_h", type=int, default=512,
                     help='width of the image')
 parser.add_argument("--img_w", type=int, default=512,

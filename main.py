@@ -1,5 +1,5 @@
-from globals import *
-from utils import *
+from utils.globals import *
+from utils.utils import *
 
 from style_transfer import NST
 

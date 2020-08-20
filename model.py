@@ -1,5 +1,5 @@
-from globals import *
-from utils import load_model, gram_matrix
+from utils.globals import *
+from utils.utils import load_model, gram_matrix
 
 import torch.nn.functional as F
 import torch.nn as nn

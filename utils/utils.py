@@ -1,4 +1,4 @@
-from globals import *
+from utils.globals import *
 
 import torchvision.transforms as transforms
 import torchvision.models as models
