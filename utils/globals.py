@@ -24,12 +24,13 @@ parser.add_argument("--img_w", type=int, default=512,
 # Parameters necessary for synthetization process
 parser.add_argument("--iterations", type=int, default=500,
                     help='number of iterations to perform')
-parser.add_argument("--optimizer", type=str, choices=['L-BFGS', 'Adam'],
-                    default='L-BFGS', help='optimizer')
+parser.add_argument("--optimizer", type=str, choices=['lbfgs', 'adam'],
+                    default='lbfgs', help='NST optimizer')
 parser.add_argument("--lr", type=float, default=1e-2,
                     help="learning rate for Adam optimizer")
-parser.add_argument("--init_mode", type=str, default='content',
-                    help="intialization mode for synthesized image")
+parser.add_argument("--init_mode", type=str, choices=['content', 'random'],
+                    default='content',
+                    help="intialization mode for generated image")
 parser.add_argument("--content_w", type=float, default=1,
                     help="alpha parameter, the weight of content loss")
 parser.add_argument("--style_w", type=float, default=1e6,
