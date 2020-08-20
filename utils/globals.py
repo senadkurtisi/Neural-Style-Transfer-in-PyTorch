@@ -14,6 +14,8 @@ parser.add_argument("--content_loc", type=str,
                     default='images/content/green_bridge.jpg', help='location of the content image')
 parser.add_argument("--style_loc", type=str,
                     default='images/style/vg_la_cafe.jpg', help='location of the style image')
+parser.add_argument("--output_folder", type=str, default="output",
+                    help='output folder for generated images')
 parser.add_argument("--img_h", type=int, default=512,
                     help='width of the image')
 parser.add_argument("--img_w", type=int, default=512,
@@ -22,7 +24,8 @@ parser.add_argument("--img_w", type=int, default=512,
 # Parameters necessary for synthetization process
 parser.add_argument("--iterations", type=int, default=500,
                     help='number of iterations to perform')
-parser.add_argument("--optimizer", type=str, default='lbfgs', help='optimizer')
+parser.add_argument("--optimizer", type=str, choices=['L-BFGS', 'Adam'],
+                    default='L-BFGS', help='optimizer')
 parser.add_argument("--lr", type=float, default=1e-2,
                     help="learning rate for Adam optimizer")
 parser.add_argument("--init_mode", type=str, default='content',
@@ -35,8 +38,8 @@ parser.add_argument("--style_w", type=float, default=1e6,
 config = parser.parse_args(args=[])
 
 
-# INDICES OF LAYERS IN VGG19 NETWORK
-# Indices of layers from which we extract style
+# INDICES OF USED LAYERS IN VGG19 NETWORK
+# Indices of layers from which we extract style features
 STYLE_LAYERS = [1, 6, 11, 20, 29]
-# Indices of layer from which we extract content
+# Indices of layers from which we extract content features
 CONTENT_LAYERS = [22]

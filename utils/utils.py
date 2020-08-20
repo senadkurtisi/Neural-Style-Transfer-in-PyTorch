@@ -133,12 +133,57 @@ def load_image(img_path, config, device):
     return img.to(device, torch.float)
 
 
-def show_image(img, title=None):
-    ''' Displays image on to a figure.
+def build_file_name(config):
+    ''' Builds the name of the file which
+        represents the generated image. File
+        name contains name of the content image,
+        style image, and used hyperparameters.
+
+    Arguments:
+        config (ArgumentParser): object which contains
+                                 all hyperparameters
+    Returns:
+        img_name (string): generated file name
+    '''
+    def extract_file_name(filename):
+        import os
+        path, filename = os.path.split(filename)
+        return os.path.splitext(filename)[0]
+
+    # Content image name and adequate weight parameter(alpha)
+    content_name = extract_file_name(config.content_loc)
+    content_name += " {" + "{:.0e}".format(config.content_w) + "}"
+
+    # Style image name and adequate weight parameter(beta)
+    style_name = extract_file_name(config.style_loc)
+    style_name += " {" + "{:.0e}".format(config.style_w) + "}"
+
+    # Content name + style name + optimizer + num. of iterations
+    img_name = ' + '.join([content_name,
+                           style_name,
+                           'opt:' + config.optimizer,
+                           'it:' + str(config.iterations)
+                           ])
+    # Add learning rate if we used Adam(used as hyperparameter)
+    if config.optimizer == "Adam":
+        img_name += "lr:" + str(config.lr)
+
+    # Set the output to be the "output" folder
+    img_name = '/'.join([config.output_folder, img_name])
+
+    print(f'Saving as: {img_name}')
+    return img_name
+
+
+def show_image(img, title=None, should_save=False):
+    ''' Displays image on to a figure. Image can
+        be saved as .png file if desired.
 
     Arguments:
         img (torch.Tensor): an image to show
         title (string): title of the figure
+        should_save (bool): should the generated
+                            image be saved?
     '''
     # Define a transformation of Tensor to PIL image
     ImageDeloader = transforms.ToPILImage()
@@ -161,3 +206,7 @@ def show_image(img, title=None):
 
     plt.show()
     plt.pause(0.0001)
+
+    if should_save:
+        # Save the image as .png file
+        img.save(build_file_name(config), "PNG")
