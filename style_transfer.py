@@ -17,7 +17,7 @@ def Adam_NST(neural_net, generated_img, optimizer, style_losses, content_losses)
         style_losses (list): MSE losses for style Gram matrices
         content_losses (list): MSE losses for content features
     Returns:
-        generated_img (torch.Tensor): synthetized image(content+style)
+        generated_img (torch.Tensor): generated image(content+style)
     '''
     for i in range(config.iterations):
         # Perform pixel value clipping to the generated image
@@ -43,11 +43,11 @@ def Adam_NST(neural_net, generated_img, optimizer, style_losses, content_losses)
         loss.backward()
         optimizer.step()
 
-        if i % 50 == 0:
-            print(f"Iter: {i}")
-            print('Style Loss : {:4f} Content Loss: {:4f}'.format(
-                style_loss.item(), content_loss.item()))
-            print()
+        # if (i+1 % 50 == 0:
+        print(f"Iter: {i}")
+        print('Style Loss : {:4f} Content Loss: {:4f}'.format(
+            style_loss.item(), content_loss.item()))
+        print()
 
     return generated_img
 
@@ -62,7 +62,7 @@ def LBFGS_NST(neural_net, generated_img, optimizer, style_losses, content_losses
         style_losses (list): MSE losses for style Gram matrices
         content_losses (list): MSE losses for content features
     Returns:
-        generated_img (torch.Tensor): synthetized image(content+style)
+        generated_img (torch.Tensor): generated image(content+style)
     '''
     cnt = 0
     while cnt <= config.iterations:
@@ -86,7 +86,7 @@ def LBFGS_NST(neural_net, generated_img, optimizer, style_losses, content_losses
 
             # Apply weighting for both losses
             # (as proposed in the papers)
-            style_loss *= (config.style_w / len(style_losses))
+            style_loss *= config.style_w
             content_loss *= config.content_w
 
             loss = style_loss + content_loss
@@ -118,14 +118,14 @@ def NST(content_img, style_img, config, device):
         device (torch.device): device on which we place
                                model and variables
     Returns:
-        generated_img (torch.tensor): synthetized image
+        generated_img (torch.tensor): generated image
     '''
     # Initialize the NST model
     neural_net = Vgg19NST(content_img, style_img, device)
     # Acquire the loss-layer objects
     style_losses, content_losses = neural_net.get_losses()
 
-    # Initialize the synthetized image
+    # Initialize the generated image
     generated_img = initialize_image(config, device, content_img, style_img)
     # Acquire the optimizer
     optimizer = get_optimizer(generated_img, config)

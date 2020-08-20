@@ -15,5 +15,5 @@ if __name__ == "__main__":
 
     # Perform the Neural Style Transfer
     generated_image = NST(content_img, style_img, config, device)
-    # Show the synthetized image & save it to the ouput folder
-    show_image(generated_image, title='Synthetized image', should_save=True)
+    # Show the generated image & save it to the ouput folder
+    show_image(generated_image, title='Generated image', should_save=True)
