@@ -55,7 +55,7 @@ class StyleLoss(nn.Module):
 
 class NormRGB(nn.Module):
     ''' Layer which performs normalization of
-        te input RGB image to mean and std of
+        the input RGB image to mean and std of
         ImageNet dataset (Vgg19 was trained on
         this dataset). Input images need to be
         in the [0,1] range.
