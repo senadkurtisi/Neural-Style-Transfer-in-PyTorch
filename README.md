@@ -29,11 +29,11 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 <img src="images/content/tree.jpg" width="225" height="225">|<img src="images/style/vg_wheat_field.jpg" width="225" height="225">|<img src="output/tree{1e+00}+vg_wheat_field{1e+06}+opt_lbfgs+it_500.png" width="225" height="225">
 
 
-<img src="output/taj_mahal{1e+00}+ben_giles{1e+06}+opt_lbfgs+it_500.png" width="225" height="225">  <img src="images/style/ben_giles.jpg" width="225" height="225">
+<img src="output/owl{1e+00}+vg_starry_night{1e+06}+opt_lbfgs+it_500" width="200" height="200">  <img src="images/style/vg_starry_night.jpg" width="200" height="200">
 
-<img src="output/taj_mahal{1e+00}+mosaic{1e+06}+opt_lbfgs+it_500.png" width="225" height="225">  <img src="images/style/mosaic.jpg" width="225" height="225">
+<img src="output/owl{1e+00}+ben_giles{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/ben_giles.jpg" width="200" height="200">
 
-<img src="output/taj_mahal{1e+00}+psychedelic{1e+06}+opt_lbfgs+it_500.png" width="225" height="225">  <img src="images/style/psychedelic.jpg" width="225" height="225">
+<img src="output/owl{1e+00}+glass{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/psychedelic.jpg" width="200" height="200">
 
 
 # References
