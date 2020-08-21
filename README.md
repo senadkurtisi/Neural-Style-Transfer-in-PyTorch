@@ -10,7 +10,7 @@ Neural Style Transfer is an algorithm which takes two images as input (content i
 
 | Content    | Style    | Generated    |
 :-----------:|:--------:|:-------------:
-![](images/content/green_bridge.jpg)   | ![](images/style/vg_la_cafe.jpg)   | ![](output/green_bridge {1e+00} + vg_la_cafe {1e+06} + opt_lbfgs + it_500.png)
+![](images/content/green_bridge.jpg = 400x)   | ![](images/style/vg_la_cafe.jpg)   | ![]("output/green_bridge {1e+00} + vg_la_cafe {1e+06} + opt_lbfgs + it_500.png)"
 
 # Implementation 
 Input images are rescaled to 512x512. Rescale parameters can be modified in the [globals.py](utils/globals.py) file. Input images are normalized to the [0,1] range as proposed in the paper. The algorithm uses *L-BFGS* optimizer as a default one as proposed in the paper. The optimizer can be changed to Adam the same way as rescale parameters.
