@@ -15,8 +15,8 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 
 | Content    | Style    | Generated    |
 :-----------:|:--------:|:-------------:
-<img src="images/content/green_bridge.jpg" width="350" height="350">   | <img src="images/style/vg_la_cafe.jpg" width="350" height="350"> | <img src="output/green_bridge{1e+00}+vg_la_cafe{1e+06}+opt_lbfgs+it_500.png" width="350" height="350">
+<img src="images/content/green_bridge.jpg" width="300" height="300">   | <img src="images/style/vg_la_cafe.jpg" width="300" height="300"> | <img src="output/green_bridge{1e+00}+vg_la_cafe{1e+06}+opt_lbfgs+it_500.png" width="300" height="300">
 
-|           |           |
-:----------:|:----------:
-<img src="output/green_bridge{1e+00}+udnie{1e+06}+opt_lbfgs+it_500.png" width="250" height="200">   | <img src="output/green_bridge{1e+00}+candy{1e+06}+opt_lbfgs+it_500.png" width="250" height="200">   | <img src="output/green_bridge{1e+00}+wave{1e+06}+opt_lbfgs+it_500.png" width="250" height="200">
+|           |           |           |
+:----------:|:---------:|:----------:
+<img src="output/green_bridge{1e+00}+udnie{1e+06}+opt_lbfgs+it_500.png" width="300" height="300">   | <img src="output/green_bridge{1e+00}+candy{1e+06}+opt_lbfgs+it_500.png" width="300" height="300">   | <img src="output/green_bridge{1e+00}+wave{1e+06}+opt_lbfgs+it_500.png" width="300" height="300">
