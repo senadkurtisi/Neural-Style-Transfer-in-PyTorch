@@ -36,7 +36,7 @@ parser.add_argument("--content_w", type=float, default=1,
 parser.add_argument("--style_w", type=float, default=1e6,
                     help='beta parameter, the weight of style loss')
 
-config = parser.parse_args(args=[])
+config = parser.parse_args()
 
 
 # INDICES OF USED LAYERS IN VGG19 NETWORK
