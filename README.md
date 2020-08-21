@@ -36,10 +36,10 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 <img src="output/owl{1e+00}+glass{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/psychedelic.jpg" width="200" height="200">
 
 # Instructions
-1. Open Anaconda Prompt and navigate to the directory of this repo by using: <cd path_to_this_repository_on_your_system>
-2. Execute <conda env create -f environment.yml> This will set up an environment with all necessary dependencies. 
-3. Activate previously created environment by executing: <conda activate neural_style_transfer>
-4. Start the style transfer main script: <python main.py> . You can run the script in the previous form but you would need to first specify the path to desired content and style images in the **content_loc** and **style_loc** arguments of the *ArgumentParser* object in the [globals.py](utils/globals.py) file. The other way to run the NST script with images that are not default is: <python main.py --content_loc PATH_TO_CONTENT --style_loc PATH_TO_STYLE> . You can use this approach for any argument, not just images. You can check which parameters you can control in the [globals.py](utils/globals.py) file.
+1. Open Anaconda Prompt and navigate to the directory of this repo by using: ```cd path_to_this_repository_on_your_system ```
+2. Execute ``` conda env create -f environment.yml ``` This will set up an environment with all necessary dependencies. 
+3. Activate previously created environment by executing: ``` conda activate neural_style_transfer ```
+4. Start the style transfer main script: ``` python main.py ``` . You can run the script in the previous form but you would need to first specify the path to desired content and style images in the **content_loc** and **style_loc** arguments of the *ArgumentParser* object in the [globals.py](utils/globals.py) file. The other way to run the NST script with images that are not default is: ``` python main.py --content_loc PATH_TO_CONTENT --style_loc PATH_TO_STYLE ``` . You can use this approach for any argument, not just images. You can check which parameters you can control in the [globals.py](utils/globals.py) file.
 
 # References
 - While implementing this I've found [Aleksa's repo](https://github.com/gordicaleksa/pytorch-neural-style-transfer) as very helpful.
