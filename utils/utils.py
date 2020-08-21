@@ -152,14 +152,14 @@ def build_file_name(config):
 
     # Content image name and adequate weight parameter(alpha)
     content_name = extract_file_name(config.content_loc)
-    content_name += " {" + "{:.0e}".format(config.content_w) + "}"
+    content_name += "{" + "{:.0e}".format(config.content_w) + "}"
 
     # Style image name and adequate weight parameter(beta)
     style_name = extract_file_name(config.style_loc)
-    style_name += " {" + "{:.0e}".format(config.style_w) + "}"
+    style_name += "{" + "{:.0e}".format(config.style_w) + "}"
 
     # Content name + style name + optimizer + num. of iterations
-    img_name = ' + '.join([content_name,
+    img_name = '+'.join([content_name,
                            style_name,
                            'opt:' + config.optimizer,
                            'it:' + str(config.iterations)
@@ -170,6 +170,8 @@ def build_file_name(config):
 
     # Set the output to be the "output" folder
     img_name = '/'.join([config.output_folder, img_name])
+    # Add the extension
+    img_name += '.png'
 
     print(f'Saving as: {img_name}')
     return img_name

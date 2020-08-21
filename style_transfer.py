@@ -35,7 +35,7 @@ def Adam_NST(neural_net, generated_img, optimizer, style_losses, content_losses)
             content_loss += cl.loss
 
         # Apply weighting for both losses
-        # (as proposed in the papers)
+        # (as proposed in the paper)
         style_loss *= config.style_w
         content_loss *= config.content_w
 
@@ -85,7 +85,7 @@ def LBFGS_NST(neural_net, generated_img, optimizer, style_losses, content_losses
                 content_loss += cl.loss
 
             # Apply weighting for both losses
-            # (as proposed in the papers)
+            # (as proposed in the paper)
             style_loss *= config.style_w
             content_loss *= config.content_w
 
