@@ -20,10 +20,20 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 
 **More styles applied to the content picture above**
 
-<img src="output/green_bridge{1e+00}+udnie{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">|<img src="output/green_bridge{1e+00}+candy{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">|<img src="output/green_bridge{1e+00}+wave{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">
+<img src="output/green_bridge{1e+00}+udnie{1e+06}+opt_lbfgs+it_500.png" width="275" height="275"> | <img src="output/green_bridge{1e+00}+candy{1e+06}+opt_lbfgs+it_500.png" width="275" height="275"> | <img src="output/green_bridge{1e+00}+wave{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">
 
 
 ### Other interesting results:
 | Content  | Style   | Generated   |
 :---------:|:-------:|:------------:
 <img src="images/content/tree.jpg" width="225" height="225">|<img src="images/style/vg_wheat_field.jpg" width="225" height="225">|<img src="output/tree{1e+00}+vg_wheat_field{1e+06}+opt_lbfgs+it_500.png" width="225" height="225">
+
+
+:--------:|:--------:
+src="output/taj_mahal{1e+00}+ben_giles{1e+06}+opt_lbfgs+it_500.png" width="225" height="225"> | <img src="images/style/ben_giles.jpg" width="225" height="225">
+:--------:|:--------:
+src="output/taj_mahal{1e+00}+mosaic{1e+06}+opt_lbfgs+it_500.png" width="225" height="225"> | <img src="images/style/mosaic.jpg" width="225" height="225">
+:--------:|:--------:
+src="output/taj_mahal{1e+00}+psychedelic{1e+06}+opt_lbfgs+it_500.png" width="225" height="225"> | <img src="images/style/psychedelic.jpg" width="225" height="225">
+
+
