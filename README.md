@@ -20,6 +20,7 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 
 **More styles applied to the content picture above**
 
+
 :----------:|:---------:|:----------:
 <img src="output/green_bridge{1e+00}+udnie{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">   | <img src="output/green_bridge{1e+00}+candy{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">   | <img src="output/green_bridge{1e+00}+wave{1e+06}+opt_lbfgs+it_500.png" width="275" height="275">
 
