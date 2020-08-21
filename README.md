@@ -1,13 +1,13 @@
 # Neural Style Transfer in PyTorch
 
 ## Motivation
-This project was implemented as an attempt of partially recreating the original [neural style transfer paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf). I've added some modifications to my implementation though.
+This project was implemented as an attempt of partially recreating the original [neural style transfer paper](https://arxiv.org/pdf/1508.06576.pdf). I've added some modifications to my implementation though.
 
 ## Neural Style Transfer
 Neural Style Transfer is an algorithm which takes two images as input (content image and style image) and combines them into a new image. The new image will keep the *content* of the **content input image** and will capture the *style* of the **style input image**. Algorithm uses CNNs to achieve this.
 
 # Implementation 
-Input images are rescaled to 512x512. Rescale parameters can be modified in the [globals.py](utils/globals.py) file. Input images are normalized to the [0,1] range as proposed in the paper. The algorithm uses *L-BFGS* optimizer as a default one as proposed in the paper. The optimizer can be changed to Adam the same way as rescale parameters.
+Input images are rescaled to 512x512. Rescale parameters can be modified in the [globals.py](utils/globals.py) file in the img_w and img_h parameters of the *ArgumentParser* object. Input images are normalized to the [0,1] range as proposed in the paper. The algorithm uses *L-BFGS* optimizer as a default one as proposed in the paper. The optimizer can be changed to Adam the same way as rescale parameters.
 
 The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and conv5_1 for style loss and layer conv4_2 for content loss. I used ReLU outputs applied to those layers (ReLU:inplace=False). 
 
@@ -33,13 +33,13 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 
 <img src="output/owl{1e+00}+ben_giles{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/ben_giles.jpg" width="200" height="200">
 
-<img src="output/owl{1e+00}+glass{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/psychedelic.jpg" width="200" height="200">
+<img src="output/owl{1e+00}+glass{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/glass.jpg" width="200" height="200">
 
 # Instructions
 1. Open Anaconda Prompt and navigate to the directory of this repo by using: ```cd PATH_TO_THIS_REPO_ON_YOUR_SYSTEM ```
 2. Execute ``` conda env create -f environment.yml ``` This will set up an environment with all necessary dependencies. 
 3. Activate previously created environment by executing: ``` conda activate neural_style_transfer ```
-4. Start the style transfer main script: ``` python main.py ``` . You can run the script in the previous form but you would need to first specify the path to desired content and style images in the **content_loc** and **style_loc** arguments of the *ArgumentParser* object in the [globals.py](utils/globals.py) file considering the default paths are ```content_loc:images/content/green_bridge.jpg style_loc:images/style/vg_la_cafe.jpg```. The other way to run the NST script with images that are not default is: ``` python main.py --content_loc PATH_TO_CONTENT --style_loc PATH_TO_STYLE ``` . You can use this approach for any argument, not just images. You can check which parameters you can control in the [globals.py](utils/globals.py) file.
+4. Start the style transfer main script: ``` python main.py --content_loc PATH_TO_CONTENT --style_loc PATH_TO_STYLE ``` or just execute ``` python main.py ``` and use default locations for images and other parameters. Default values for parameters can be edited in arguments of the *ArgumentParser* object in the [globals.py](utils/globals.py) file.
 
 # References
 - While implementing this I've found [Aleksa's repo](https://github.com/gordicaleksa/pytorch-neural-style-transfer) as very helpful
