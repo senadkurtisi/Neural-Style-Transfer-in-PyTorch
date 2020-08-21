@@ -38,6 +38,15 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 
 # References
 While implementing this I've found [Aleksa's repo](https://github.com/gordicaleksa/pytorch-neural-style-transfer) as very helpful.
+@misc{Gordić2020nst,
+  author = {Gordić, Aleksa},
+  title = {pytorch-neural-style-transfer},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/gordicaleksa/pytorch-neural-style-transfer}},
+}
+
 Also PyTorch has an amazing [tutorial](https://pytorch.org/tutorials/advanced/neural_style_tutorial.html) on Neural Style Transfer.
 
 Images were downloaded from [Pixabay](https://pixabay.com/).
