@@ -36,7 +36,7 @@ The paper suggests the usage of layers: conv1_1, conv2_1, conv3_1, conv4_1 and c
 <img src="output/owl{1e+00}+glass{1e+06}+opt_lbfgs+it_500.png" width="200" height="200">  <img src="images/style/glass.jpg" width="200" height="200">
 
 # Instructions
-1. Open Anaconda Prompt and navigate to the directory of this repo by using: ```cd path_to_this_repo_on_your_system ```
+1. Open Anaconda Prompt and navigate to the directory of this repo by using: ```cd path_to_this_repo ```
 2. Execute ``` conda env create -f environment.yml ``` This will set up an environment with all necessary dependencies. 
 3. Activate previously created environment by executing: ``` conda activate neural_style_transfer ```
 4. Start the style transfer main script: ``` python main.py --content_loc PATH_TO_CONTENT --style_loc PATH_TO_STYLE ``` or just execute ``` python main.py ``` and use default locations for images and other parameters. Default values for parameters can be edited in arguments of the *ArgumentParser* object in the [globals.py](utils/globals.py) file.
